@@ -1,18 +1,23 @@
+body {
+  text-align: center;
+}
+
+
 .wrapper {
-    height: 100vh;
+    height: 25vh;
     /*This part is important for centering*/
     display: grid;
     place-items: center;
   }
   
   .typing-demo {
-    width: 22ch;
+    width: 59ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
+    font-size: 1.5em;
   }
   
   @keyframes typing {
@@ -25,4 +30,24 @@
     50% {
       border-color: transparent
     }
+  }
+
+  .formWrapper{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mainForm {
+    margin: auto;
+    height: 25px;
+    width: 500px;
+    font-size: 25px;
+    display: inline-block;
+    color: black;
+    font-family: "Courier";
+    padding: 20px;
+  }
+
+  ::placeholder {
+    color: gray;
   }
