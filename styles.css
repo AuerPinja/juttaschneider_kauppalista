@@ -51,3 +51,7 @@ body {
   ::placeholder {
     color: gray;
   }
+
+  input:focus::placeholder {
+    color: transparent;
+  }

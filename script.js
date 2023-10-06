@@ -12,12 +12,14 @@ if (typeWriterValue < typeWriterText.length) {
 }
 */
 
-let tekstikentta = document.querySelector("#item");
+/* Tässä koitettiin saada formin placeholder-tekstiä häviämään kun onFocus-event tapahtuu mutta ei saatu tätäkään toimimaan
 
-tekstikentta.addEventListener("focus", function(){hidePlaceholder()});
+let tekstikentta = document.getElementById("item");
+
+tekstikentta.addEventListener("focus", hidePlaceholder());
 
 function hidePlaceholder(){
-    let tekstiPlaceHolder = document.querySelector("#item");
-    tekstiPlaceHolder.placeholder = "";
+    let tekstiPlaceHolder = document.getElementById("item");
+    tekstiPlaceHolder.inner = "";
 }
-
+ */
