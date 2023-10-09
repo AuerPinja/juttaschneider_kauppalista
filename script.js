@@ -32,20 +32,40 @@ function hidePlaceholder(){
 
 function addTuote() {
     var tuoteKentta = document.getElementById("item");
-    var tuoteNimi = tuoteKentta.value.trim(); // Poista mahdolliset tyhjät välit
+    var tuoteNimi = tuoteKentta.value.trim().toLowerCase(); // Poista mahdolliset tyhjät välit ja muuta pieniksi kirjaimiksi
 
-    if (tuoteNimi !== "") {
+    // Tarkistetaan, onko tuote Jutan listassa
+    if (tuoteNimi === "juusto" || tuoteNimi === "juustoa" || tuoteNimi === "leipä" || tuoteNimi === "leipää" || tuoteNimi === "margariinia" || tuoteNimi === "maito") {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
-        uusiTuote.textContent = tuoteNimi;
+        uusiTuote.textContent = tuoteKentta.value;
         kauppalista.appendChild(uusiTuote);
         tuoteKentta.value = ""; // Putsataan tekstikenttä
-    }
 
-    if (tuoteNimi.toLowerCase() === "juusto" || tuoteNimi.toLowerCase() === "juustoa") {
+        // Soita ääniclip halutulle tuotteelle
+        var audioElementId = tuoteNimi === "juusto" || tuoteNimi === "juustoa" ? "juustoa" :
+                             tuoteNimi === "leipä" || tuoteNimi === "leipää" ? "leipaa" :
+                             tuoteNimi === "margariinia" ? "margariini" :
+                             tuoteNimi === "maito" ? "maito" : "";
+
+        if (audioElementId !== "") {
+            var audio = document.getElementById(audioElementId);
+            audio.play();
+        }
+    } else {
+        var audio = document.getElementById("sinaolet");
+        audio.play();
+        alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
+        
+    }
+}
+
+//tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
+
+        /* if (tuoteNimi.toLowerCase() === "juusto" || tuoteNimi.toLowerCase() === "juustoa") {
         var audio = document.getElementById("juustoa");
         audio.play();
-    } else if (tuoteNimi.toLowerCase() === "leipä" || tuoteNimi.toLowerCase() === "leipää") {
+    }   else if (tuoteNimi.toLowerCase() === "leipä" || tuoteNimi.toLowerCase() === "leipää") {
         var audio = document.getElementById("leipaa");
         audio.play();
     }
@@ -53,4 +73,9 @@ function addTuote() {
         var audio = document.getElementById("margariini");
         audio.play();
     }
-}
+    else if (tuoteNimi.toLowerCase() === "maito") {
+        var audio = document.getElementById("maito");
+        audio.play();
+    } 
+    
+    */
