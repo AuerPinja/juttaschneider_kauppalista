@@ -52,7 +52,8 @@ function addTuote() {
         tuoteKentta.value = "";
 
         //tehdään ehtolauseet käyttäen ternary operatoraattoria:
-
+        // jos tuotenimi x niin -> audioelementId on x
+        
         var audioElementId = tuoteNimi === "juusto" || tuoteNimi === "juustoa" ? "juustoa" :
                              tuoteNimi === "leipä" || tuoteNimi === "leipää" ? "leipaa" :
                              tuoteNimi === "suola" || tuoteNimi === "suolaa" ? "suola" :

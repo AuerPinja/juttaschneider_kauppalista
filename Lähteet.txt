@@ -11,7 +11,7 @@ chatGBT: "Virheilmoitus, jonka sait, osoittaa, että yrität asettaa textDecorat
 Error message on console: Uncaught TypeError: Cannot set properties of undefined (setting 'textDecoration')
     at HTMLInputElement.<anonymous> 
 
-Sinun tulisi yliviivata tai poistaa yliviivaus <li>-elementiltä sen sijaan. Voit päivittää koodia seuraavasti:"
+Sinun tulisi yliviivata tai poistaa yliviivaus <li>-elementiltä sen sijaan.
 
 
 
