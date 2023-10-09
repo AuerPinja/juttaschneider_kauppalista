@@ -55,3 +55,12 @@ body {
   input:focus::placeholder {
     color: transparent;
   }
+
+  .kauppaLista {
+
+    font-size: 25px;
+    padding: 20px;
+
+  }
+
+  

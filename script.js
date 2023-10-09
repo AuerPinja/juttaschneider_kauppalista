@@ -23,3 +23,34 @@ function hidePlaceholder(){
     tekstiPlaceHolder.inner = "";
 }
  */
+
+// funktio lisää uuden tuotteen listalle 
+
+
+
+
+
+function addTuote() {
+    var tuoteKentta = document.getElementById("item");
+    var tuoteNimi = tuoteKentta.value.trim(); // Poista mahdolliset tyhjät välit
+
+    if (tuoteNimi !== "") {
+        var kauppalista = document.getElementById("kauppalista");
+        var uusiTuote = document.createElement("li");
+        uusiTuote.textContent = tuoteNimi;
+        kauppalista.appendChild(uusiTuote);
+        tuoteKentta.value = ""; // Putsataan tekstikenttä
+    }
+
+    if (tuoteNimi.toLowerCase() === "juusto" || tuoteNimi.toLowerCase() === "juustoa") {
+        var audio = document.getElementById("juustoa");
+        audio.play();
+    } else if (tuoteNimi.toLowerCase() === "leipä" || tuoteNimi.toLowerCase() === "leipää") {
+        var audio = document.getElementById("leipaa");
+        audio.play();
+    }
+    else if (tuoteNimi.toLowerCase() === "margariinia") {
+        var audio = document.getElementById("margariini");
+        audio.play();
+    }
+}

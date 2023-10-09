@@ -9,9 +9,31 @@
     <script src='script.js'></script>
 </head>
 <body>
-    
+    <!-- viittaus äänitiedostoihin -->
+    <audio id="juustoa" src="media/juustoa.mp3"></audio>
+    <audio id="leipaa" src="media/leipa.mp3"></audio>
+    <audio id="maito" src="media/maitoa.mp3"></audio>
+    <audio id="margariini" src="media/terveellista_margariinia.mp3"></audio>
+    <audio id="sinaolet" src="media/sina_olet_kamala.mp3"></audio>
+    <audio id="omena" src="media/omena.mp3"></audio>
+    <audio id="suola" src="media/suola.mp3"></audio>
+    <audio id="jogurttia" src="media/tavallista_jogurttia.mp3"></audio>
+    <!--VIITTAUS LOPPUU-->
+
+
+
+
     <div class="wrapper"><div class="typing-demo"><h1>Jutta Schneiderin kauppalista</h1></div></div><br>
     <div class="fromWrapper"></div><form><input type="text" id="item" class="mainForm" placeholder="Mitä sinä tarvitset?" value=""></form></div>
 
+<!-- Napin voi vaihtaa myöhemmin jos haluaa, esimerkiksi enterillä toimimaan versioon? --> 
+
+    <button onclick="addTuote()">Lisää</button>
+
+
+
+    <div class="kauppaLista" id="kauppalista"></div>
+
+    
 </body>
 </html>
