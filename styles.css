@@ -69,9 +69,9 @@ body {
   }
 
   button {
-    width: 100px;
+    width: auto;
     padding: 10px;
-    margin: 20px;
+    margin: 15px;
     font-family: "Courier";
   }
 
