@@ -2,8 +2,16 @@
 Elo:
 
 https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/
+https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+https://www.w3schools.com/jsref/prop_style_textdecoration.asp
+https://www.geeksforgeeks.org/javascript-ternary-operator/
 
+chatGBT: "Virheilmoitus, jonka sait, osoittaa, että yrität asettaa textDecoration-ominaisuuden tuoteTeksti -muuttujalle, joka ei ole DOM-elementti. Tämä johtuu siitä, että tuoteTeksti on tekstisolmu (TextNode), eikä siihen voi suoraan asettaa CSS-ominaisuuksia. virhetekstiin: 
 
+Error message on console: Uncaught TypeError: Cannot set properties of undefined (setting 'textDecoration')
+    at HTMLInputElement.<anonymous> 
+
+Sinun tulisi yliviivata tai poistaa yliviivaus <li>-elementiltä sen sijaan. Voit päivittää koodia seuraavasti:"
 
 
 

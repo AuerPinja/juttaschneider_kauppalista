@@ -32,36 +32,53 @@ function hidePlaceholder(){
 
 function addTuote() {
     var tuoteKentta = document.getElementById("item");
-    var tuoteNimi = tuoteKentta.value.trim().toLowerCase(); // Poista mahdolliset tyhjät välit ja muuta pieniksi kirjaimiksi
+    var tuoteNimi = tuoteKentta.value.trim().toLowerCase();
     var jutanLista = ["maitoa", "maito", "juustoa", "margariinia", "leipää", "leipaa", "jogurttia", "jugurttia", "omena", "suola"];
 
-    // Tarkistetaan, onko tuote Jutan listassa
     if (jutanLista.includes(tuoteNimi)) {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
-        uusiTuote.textContent = tuoteKentta.value;
-        kauppalista.appendChild(uusiTuote);
-        tuoteKentta.value = ""; // Putsataan tekstikenttä
 
-        // Soita ääniclip halutulle tuotteelle
+        // Lisää checkbox
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        uusiTuote.appendChild(checkbox);
+
+        // Lisää tuotteen nimi
+        var tuoteTeksti = document.createTextNode(tuoteKentta.value);
+        uusiTuote.appendChild(tuoteTeksti);
+
+        kauppalista.appendChild(uusiTuote);
+        tuoteKentta.value = "";
+
+        //tehdään ehtolauseet käyttäen ternary operatoraattoria:
+
         var audioElementId = tuoteNimi === "juusto" || tuoteNimi === "juustoa" ? "juustoa" :
                              tuoteNimi === "leipä" || tuoteNimi === "leipää" ? "leipaa" :
+                             tuoteNimi === "suola" || tuoteNimi === "suolaa" ? "suola" :
+                             tuoteNimi === "jogurttia" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
                              tuoteNimi === "margariinia" ? "margariini" :
-                             tuoteNimi === "maito" ? "maito" : "";
+                             tuoteNimi === "omena" ? "omena" :
+                             tuoteNimi === "maito" ? "maitoa" : "";
 
         if (audioElementId !== "") {
             var audio = document.getElementById(audioElementId);
             audio.play();
         }
+        checkbox.addEventListener("change", function() {
+            if (checkbox.checked) {
+                uusiTuote.style.textDecoration = "line-through";
+            } else {
+                uusiTuote.style.textDecoration = "none";
+            }
+        });
     } else {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
-
-        // sitä voi miettiä haluaako tämän kuulua joka kerta kun laittaa väärän tuotteen :unhinged:
-        
     }
 }
+
 
 function katsoVideo(){
 
