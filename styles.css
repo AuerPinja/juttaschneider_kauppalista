@@ -76,4 +76,13 @@ body {
     font-family: "Courier";
   }
 
+  li {
+    background: #eee;
+    padding: 10px;
+  }
+
+  li:nth-child(odd) {
+    background: #ddd;
+  }
+
   
