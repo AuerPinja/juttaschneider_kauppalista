@@ -33,9 +33,10 @@ function hidePlaceholder(){
 function addTuote() {
     var tuoteKentta = document.getElementById("item");
     var tuoteNimi = tuoteKentta.value.trim().toLowerCase(); // Poista mahdolliset tyhjät välit ja muuta pieniksi kirjaimiksi
+    var jutanLista = ["maitoa", "maito", "juustoa", "margariinia", "leipää", "leipaa", "jogurttia", "jugurttia", "omena", "suola"];
 
     // Tarkistetaan, onko tuote Jutan listassa
-    if (tuoteNimi === "juusto" || tuoteNimi === "juustoa" || tuoteNimi === "leipä" || tuoteNimi === "leipää" || tuoteNimi === "margariinia" || tuoteNimi === "maito") {
+    if (jutanLista.includes(tuoteNimi)) {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
         uusiTuote.textContent = tuoteKentta.value;
@@ -60,6 +61,10 @@ function addTuote() {
         // sitä voi miettiä haluaako tämän kuulua joka kerta kun laittaa väärän tuotteen :unhinged:
         
     }
+}
+
+function katsoVideo(){
+
 }
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
