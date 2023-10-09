@@ -56,6 +56,8 @@ function addTuote() {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
+
+        // sitä voi miettiä haluaako tämän kuulua joka kerta kun laittaa väärän tuotteen :unhinged:
         
     }
 }
