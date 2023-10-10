@@ -42,6 +42,10 @@ function addTuote() {
         // Lisää checkbox
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        checkbox.style.marginRight = "15px";
+        checkbox.style.height = "25px";
+        checkbox.style.width = "25px";
+        checkbox.style.verticalAlign = "middle";
         uusiTuote.appendChild(checkbox);
 
         // Lisää tuotteen nimi
