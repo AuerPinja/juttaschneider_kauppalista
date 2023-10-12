@@ -91,5 +91,12 @@ body {
     margin: 0px;
     float: right;
   }
+
+  #close {
+    display: none;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+  }
  
   
