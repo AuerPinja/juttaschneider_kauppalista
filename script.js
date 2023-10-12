@@ -88,6 +88,12 @@ function addTuote() {
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
     }
+
+    // muuttaa syöttö-laatikon reunan värin takaisin mustaksi jos tuote on halutussa listassa
+    varoitus = document.getElementById("item");
+    varoitus.style.border = "1px solid " + (jutanLista.includes(tuoteNimi) ? "black" : "red");
+
+
 }
 
 function tallennaKauppalista() {
