@@ -84,8 +84,20 @@ function addTuote() {
     }
 }
 
-
 function katsoVideo(){
+    var videoWrapper = document.getElementById("videoContainer");
+    var isVideoOpen = true;
+    videoWrapper.style.textAlign = "left";
+    videoWrapper.style.position = "absolute";
+    var jakso = document.createElement('video');
+    jakso.src = './media/kuulostaa_hyvalta_3.mp4';
+    jakso.setAttribute("height", "320px");
+    jakso.setAttribute("controls", "controls");
+    videoWrapper.appendChild(jakso);
+
+    if (isVideoOpen == true){
+        videoWrapper.removeChild(jakso);
+    }
 
 }
 
