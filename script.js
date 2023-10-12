@@ -26,16 +26,14 @@ function hidePlaceholder(){
 
 // funktio lisää uuden tuotteen listalle 
 
-
-
-
-
 function addTuote() {
     var tuoteKentta = document.getElementById("item");
     var tuoteNimi = tuoteKentta.value.trim().toLowerCase();
     var jutanLista = ["maitoa", "maito", "juustoa", "margariinia", "leipää", "leipaa", "jogurttia", "jugurttia", "omena", "suola"];
 
-    if (jutanLista.includes(tuoteNimi)) {
+    if (jutanLista.includes(tuoteNimi) || tuoteKentta.length < 3) /* tehtävän annossa haluttiin mahdollisuus siihen että ohjelma tunnistaa jos käyttäjä 
+    yrittää kirjoittaa liian lyhyen sanan. Tämän ongelman tapauksessa siitä ei ole hirveästi hyötyä mutta se on nyt täällä siitä huolimatta */
+    {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
 
@@ -51,6 +49,10 @@ function addTuote() {
         // Lisää tuotteen nimi
         var tuoteTeksti = document.createTextNode(tuoteKentta.value);
         uusiTuote.appendChild(tuoteTeksti);
+
+        var poistaPainike = document.createElement("button");
+        poistaPainike.textContent = "Poista";
+        uusiTuote.appendChild(poistaPainike);
 
         kauppalista.appendChild(uusiTuote);
         tuoteKentta.value = "";
@@ -76,30 +78,34 @@ function addTuote() {
             } else {
                 uusiTuote.style.textDecoration = "none";
             }
+            tallennaKauppalista();
+        });
+        
+        poistaPainike.addEventListener("click", function() {
+            kauppalista.removeChild(uusiTuote);
+            tallennaKauppalista();
         });
     } else {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
     }
-}
 
-function katsoVideo(){
-    var videoWrapper = document.getElementById("videoContainer");
-    var isVideoOpen = true;
-    videoWrapper.style.textAlign = "left";
-    videoWrapper.style.position = "absolute";
-    var jakso = document.createElement('video');
-    jakso.src = './media/kuulostaa_hyvalta_3.mp4';
-    jakso.setAttribute("height", "320px");
-    jakso.setAttribute("controls", "controls");
-    videoWrapper.appendChild(jakso);
+    // muuttaa syöttö-laatikon reunan värin takaisin mustaksi jos tuote on halutussa listassa
+    varoitus = document.getElementById("item");
+    varoitus.style.border = "1px solid " + (jutanLista.includes(tuoteNimi) ? "black" : "red");
 
-    if (isVideoOpen == true){
-        videoWrapper.removeChild(jakso);
-    }
 
 }
+
+function tallennaKauppalista() {
+    var kauppalista = document.getElementById("kauppalista");
+    var tuotteet = kauppalista.querySelectorAll("li")
+
+}
+
+
+
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
 
