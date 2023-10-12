@@ -66,7 +66,7 @@ function addTuote() {
                              tuoteNimi === "jogurttia" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
                              tuoteNimi === "margariinia" ? "margariini" :
                              tuoteNimi === "omena" ? "omena" :
-                             tuoteNimi === "maito" || tuoteNimi === "maitoa" ? "maitoa" : "";
+                             tuoteNimi === "maito" ? "maitoa" : "";
 
         if (audioElementId !== "") {
             var audio = document.getElementById(audioElementId);
