@@ -5,7 +5,6 @@ Tämä projekti on käytännössä Canvasissa annettu To do -listan tehtävänan
 
 
   ELON TO_DO:
-              - tee ehto ettei tule samaa tuotetta kahdesti
               - "Listan tiedot tallennetaan selaimeen, esim. localstorageen"
 
 Tehty:
