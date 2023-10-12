@@ -31,7 +31,9 @@ function addTuote() {
     var tuoteNimi = tuoteKentta.value.trim().toLowerCase();
     var jutanLista = ["maitoa", "maito", "juustoa", "margariinia", "leipää", "leipaa", "jogurttia", "jugurttia", "omena", "suola"];
 
-    if (jutanLista.includes(tuoteNimi)) {
+    if (jutanLista.includes(tuoteNimi) || tuoteKentta.length < 3) /* tehtävän annossa haluttiin mahdollisuus siihen että ohjelma tunnistaa jos käyttäjä 
+    yrittää kirjoittaa liian lyhyen sanan. Tämän ongelman tapauksessa siitä ei ole hirveästi hyötyä mutta se on nyt täällä siitä huolimatta */
+    {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
 
