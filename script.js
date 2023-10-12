@@ -63,10 +63,10 @@ function addTuote() {
         var audioElementId = tuoteNimi === "juusto" || tuoteNimi === "juustoa" ? "juustoa" :
                              tuoteNimi === "leipä" || tuoteNimi === "leipää" ? "leipaa" :
                              tuoteNimi === "suola" || tuoteNimi === "suolaa" ? "suola" :
-                             tuoteNimi === "jogurtti" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
+                             tuoteNimi === "jogurttia" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
                              tuoteNimi === "margariinia" ? "margariini" :
                              tuoteNimi === "omena" ? "omena" :
-                             tuoteNimi === "maito" ? "maitoa" : "";
+                             tuoteNimi === "maito" || tuoteNimi === "maitoa" ? "maitoa" : "";
 
         if (audioElementId !== "") {
             var audio = document.getElementById(audioElementId);
