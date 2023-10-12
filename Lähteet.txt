@@ -20,3 +20,5 @@ Sinun tulisi yliviivata tai poistaa yliviivaus <li>-elementiltä sen sijaan.
 
 
 Pinja:
+
+https://codingbeautydev.com/blog/javascript-create-video-element/ <-- videon luomiseen
