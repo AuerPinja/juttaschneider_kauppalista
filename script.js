@@ -86,7 +86,15 @@ function addTuote() {
             kauppalista.removeChild(uusiTuote);
             tallennaKauppalista();
         });
-    } else {
+    } 
+    
+    else if (tuoteNimi.length <= 3) {
+        alert("Liian lyhyt tuotenimi.");
+        tuoteKentta.value = "";
+        //tyhjentää kentän
+        
+    }
+    else {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
