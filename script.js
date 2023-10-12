@@ -26,10 +26,6 @@ function hidePlaceholder(){
 
 // funktio lisää uuden tuotteen listalle 
 
-
-
-
-
 function addTuote() {
     var tuoteKentta = document.getElementById("item");
     var tuoteNimi = tuoteKentta.value.trim().toLowerCase();
@@ -51,6 +47,10 @@ function addTuote() {
         // Lisää tuotteen nimi
         var tuoteTeksti = document.createTextNode(tuoteKentta.value);
         uusiTuote.appendChild(tuoteTeksti);
+
+        var poistaPainike = document.createElement("button");
+        poistaPainike.textContent = "Poista";
+        uusiTuote.appendChild(poistaPainike);
 
         kauppalista.appendChild(uusiTuote);
         tuoteKentta.value = "";
@@ -76,6 +76,12 @@ function addTuote() {
             } else {
                 uusiTuote.style.textDecoration = "none";
             }
+            tallennaKauppalista();
+        });
+        
+        poistaPainike.addEventListener("click", function() {
+            kauppalista.removeChild(uusiTuote);
+            tallennaKauppalista();
         });
     } else {
         var audio = document.getElementById("sinaolet");
@@ -84,10 +90,14 @@ function addTuote() {
     }
 }
 
-
-function katsoVideo(){
+function tallennaKauppalista() {
+    var kauppalista = document.getElementById("kauppalista");
+    var tuotteet = kauppalista.querySelectorAll("li")
 
 }
+
+
+
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
 
