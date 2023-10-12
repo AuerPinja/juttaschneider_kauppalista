@@ -115,7 +115,8 @@ function tallennaKauppalista() {
 
 function katsoVideo(){
     var videoWrapper = document.getElementById("videoContainer");
-    var isVideoOpen = true;
+    var closeButton = document.getElementById("close");
+    closeButton.style.display = "inline-block";
     videoWrapper.style.textAlign = "left";
     videoWrapper.style.position = "absolute";
     var jakso = document.createElement('video');
@@ -123,7 +124,20 @@ function katsoVideo(){
     jakso.setAttribute("height", "320px");
     jakso.setAttribute("controls", "controls");
     videoWrapper.appendChild(jakso);
+
+
 }
+
+function suljeVideo(){
+    var videoWrapper = document.getElementById("videoContainer");
+    var jakso = document.querySelectorAll("video")[0];
+    var closeButton = document.getElementById("close");
+    closeButton.style.display = "none";
+    videoWrapper.removeChild(jakso);
+    
+}
+
+
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
 
