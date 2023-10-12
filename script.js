@@ -51,7 +51,7 @@ function addTuote() {
 
         var poistaPainike = document.createElement("button");
         poistaPainike.textContent = "x";
-        poistaPainike.addClassList("remove");
+        poistaPainike.classList.add("remove");
         uusiTuote.appendChild(poistaPainike);
 
         kauppalista.appendChild(uusiTuote);
