@@ -63,7 +63,7 @@ function addTuote() {
         var audioElementId = tuoteNimi === "juusto" || tuoteNimi === "juustoa" ? "juustoa" :
                              tuoteNimi === "leipä" || tuoteNimi === "leipää" ? "leipaa" :
                              tuoteNimi === "suola" || tuoteNimi === "suolaa" ? "suola" :
-                             tuoteNimi === "jogurttia" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
+                             tuoteNimi === "jogurtti" || tuoteNimi === "jugurttia" ? "tavallista_jogurttia" :
                              tuoteNimi === "margariinia" ? "margariini" :
                              tuoteNimi === "omena" ? "omena" :
                              tuoteNimi === "maito" || tuoteNimi === "maitoa" ? "milk" : "";
