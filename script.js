@@ -51,8 +51,7 @@ function addTuote() {
         uusiTuote.appendChild(tuoteTeksti);
 
         var poistaPainike = document.createElement("button");
-        poistaPainike.textContent = "x";
-        poistaPainike.classList.add("remove");
+        poistaPainike.textContent = "Poista";
         uusiTuote.appendChild(poistaPainike);
 
         kauppalista.appendChild(uusiTuote);
@@ -86,15 +85,7 @@ function addTuote() {
             kauppalista.removeChild(uusiTuote);
             tallennaKauppalista();
         });
-    } 
-    
-    else if (tuoteNimi.length <= 3) {
-        alert("Liian lyhyt tuotenimi.");
-        tuoteKentta.value = "";
-        //tyhjentää kentän
-        
-    }
-    else {
+    } else {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
@@ -113,17 +104,8 @@ function tallennaKauppalista() {
 
 }
 
-function katsoVideo(){
-    var videoWrapper = document.getElementById("videoContainer");
-    var isVideoOpen = true;
-    videoWrapper.style.textAlign = "left";
-    videoWrapper.style.position = "absolute";
-    var jakso = document.createElement('video');
-    jakso.src = './media/kuulostaa_hyvalta_3.mp4';
-    jakso.setAttribute("height", "320px");
-    jakso.setAttribute("controls", "controls");
-    videoWrapper.appendChild(jakso);
-}
+
+
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
 
