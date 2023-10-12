@@ -104,7 +104,8 @@ function tallennaKauppalista() {
 
 }
 
-var videoWrapper = document.getElementById("videoContainer");
+function katsoVideo(){
+    var videoWrapper = document.getElementById("videoContainer");
     var isVideoOpen = true;
     videoWrapper.style.textAlign = "left";
     videoWrapper.style.position = "absolute";
@@ -113,11 +114,7 @@ var videoWrapper = document.getElementById("videoContainer");
     jakso.setAttribute("height", "320px");
     jakso.setAttribute("controls", "controls");
     videoWrapper.appendChild(jakso);
-
-    if (isVideoOpen == true){
-        videoWrapper.removeChild(jakso);
-    }
-
+}
 
 //tällä tavalla koitin myös mutta piti muuttaa suunnitelmaa
 
