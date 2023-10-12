@@ -1,6 +1,8 @@
 
 Elo:
 
+
+
 https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 https://www.w3schools.com/jsref/prop_style_textdecoration.asp

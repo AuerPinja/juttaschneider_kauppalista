@@ -3,12 +3,17 @@ Javascript-kurssin ensimmäinen projekti. Inspiraationa Kuulostaa hyvältä -sar
 Tämä projekti on käytännössä Canvasissa annettu To do -listan tehtävänanto, mutta tässä on joitain lisäyksiä.
 
 
+Elo: Keskittyi pääsääntöisesti ohjelman toimivuuteen (if-lauseet ja funktiot). 
+  Käytetty aika: 10h 
 
-  ELON TO_DO:
-              - "Listan tiedot tallennetaan selaimeen, esim. localstorageen"
+Pinja: Keskittyi visuaaliseen puoleen, funktioihin, ääniklippien muokkaukseen, "apua"napin toimintoon. 
+  Käytetty aika: 10h 
 
-Tehty:
 
-- mahdollisuus poistaa elementtejä? 
-- "Virheellinen sisältö syöttökentässä saa aikaan virheilmoituksen sekä virheellisen kentän korostuksen (esim. punainen reuna)."
-- tarkistaa että syötetty teksti ei ole liian lyhyt
+Yhteensä käytetty aika: n.20 h
+
+
+Palauttakaa: 
+ - flowchart
+ - github repoon
+ - netlify linkki
