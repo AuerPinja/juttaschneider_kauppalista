@@ -31,8 +31,7 @@ function addTuote() {
     var tuoteNimi = tuoteKentta.value.trim().toLowerCase();
     var jutanLista = ["maitoa", "maito", "juustoa", "margariinia", "leipää", "leipaa", "jogurttia", "jugurttia", "omena", "suola"];
 
-    if (jutanLista.includes(tuoteNimi) || tuoteKentta.length < 3) /*tehtävän annossa haluttiin mahdollisuus siihen että ohjelma tunnistaa jos käyttäjä 
-    yrittää kirjoittaa liian lyhyen sanan. Tämän ongelman tapauksessa siitä ei ole hirveästi hyötyä mutta se on nyt täällä siitä huolimatta */
+    if (jutanLista.includes(tuoteNimi))
     {
         var kauppalista = document.getElementById("kauppalista");
         var uusiTuote = document.createElement("li");
@@ -85,10 +84,20 @@ function addTuote() {
             kauppalista.removeChild(uusiTuote);
             tallennaKauppalista();
         });
-    } else {
+    } 
+    else if (tuoteNimi.length <= 3) {
+        alert("Liian lyhyt tuotenimi.");
+        tuoteKentta.value = "";
+        //tyhjentää kentän
+        
+    }
+    
+    else {
         var audio = document.getElementById("sinaolet");
         audio.play();
         alert("Tuote ei ole Jutan kauppalistalla. :(  Yritä uudelleen.");
+        tuoteKentta.value = "";
+        //tyhjentää kentän
     }
 
     // muuttaa syöttö-laatikon reunan värin takaisin mustaksi jos tuote on halutussa listassa
@@ -104,29 +113,6 @@ function tallennaKauppalista() {
 
 }
 
-function katsoVideo(){
-    var videoWrapper = document.getElementById("videoContainer");
-    var closeButton = document.getElementById("close");
-    closeButton.style.display = "inline-block";
-    videoWrapper.style.textAlign = "left";
-    videoWrapper.style.position = "absolute";
-    var jakso = document.createElement('video');
-    jakso.src = './media/kuulostaa_hyvalta_3.mp4';
-    jakso.setAttribute("height", "320px");
-    jakso.setAttribute("controls", "controls");
-    videoWrapper.appendChild(jakso);
-
-
-}
-
-function suljeVideo(){
-    var videoWrapper = document.getElementById("videoContainer");
-    var jakso = document.querySelectorAll("video")[0];
-    var closeButton = document.getElementById("close");
-    closeButton.style.display = "none";
-    videoWrapper.removeChild(jakso);
-    
-}
 
 
 
