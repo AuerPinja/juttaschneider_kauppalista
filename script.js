@@ -24,6 +24,8 @@ function hidePlaceholder(){
 }
  */
 
+
+
 // funktio lisää uuden tuotteen listalle 
 
 function addTuote() {
@@ -49,6 +51,7 @@ function addTuote() {
         var tuoteTeksti = document.createTextNode(tuoteKentta.value);
         uusiTuote.appendChild(tuoteTeksti);
 
+        //poista tuote
         var poistaPainike = document.createElement("button");
         poistaPainike.textContent = "x";
         poistaPainike.classList.add("remove");
@@ -67,11 +70,14 @@ function addTuote() {
                              tuoteNimi === "margariinia" ? "margariini" :
                              tuoteNimi === "omena" ? "omena" :
                              tuoteNimi === "maito" || tuoteNimi === "maitoa" ? "milk" : "";
+        //soittaa nimetyn ääniclipin
 
         if (audioElementId !== "") {
             var audio = document.getElementById(audioElementId);
             audio.play();
         }
+
+        //tekee "checkboxin" jonka ruksimalla ohjelma yliviivaa tuote-tekstin
         checkbox.addEventListener("change", function() {
             if (checkbox.checked) {
                 uusiTuote.style.textDecoration = "line-through";
@@ -85,13 +91,14 @@ function addTuote() {
             kauppalista.removeChild(uusiTuote);
             tallennaKauppalista();
         });
+        //jos liian lyhyt syöte niin ohjelma huomauttaa asiasta
     }     else if (tuoteNimi.length <= 3) {
         alert("Liian lyhyt tuotenimi.");
         tuoteKentta.value = "";
-        //tyhjentää kentän
-        
+        //tyhjentää kentän 
     }
-    
+
+    //jos tuote ei löydy kauppalistalta niin ohjelma huomauttaa asiasta ja toistaa ääniclipin
     else {
         var audio = document.getElementById("sinaolet");
         audio.play();
@@ -106,13 +113,13 @@ function addTuote() {
 
 
 }
-
+ 
 function tallennaKauppalista() {
     var kauppalista = document.getElementById("kauppalista");
     var tuotteet = kauppalista.querySelectorAll("li")
 
 }
-
+// avaa videon
 function katsoVideo(){
     var videoWrapper = document.getElementById("videoContainer");
     var closeButton = document.getElementById("close");
@@ -127,7 +134,7 @@ function katsoVideo(){
 
 
 }
-
+// videon sulkemiseen
 function suljeVideo(){
     var videoWrapper = document.getElementById("videoContainer");
     var jakso = document.querySelectorAll("video")[0];
