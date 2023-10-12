@@ -87,7 +87,9 @@ body {
 
   .remove {
     text-align: right;
-    padding: 0px;
+    padding: 5px;
+    margin: 0px;
+    float: right;
   }
  
   
